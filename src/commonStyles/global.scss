@@ -1,0 +1,17 @@
+@import './variables';
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $lightGray;
+  height: 100vh;
+  min-height: 100%;
+  font-family: sans-serif;
+}
+
+#root {
+  height: 100%;
+}

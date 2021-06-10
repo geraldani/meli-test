@@ -5,22 +5,6 @@ import './productItem.styles.scss'
 import { Link } from 'react-router-dom'
 import { priceFormatter } from '../../../utils'
 
-/*
-{
-  id: 'square',
-    title: 'Apple Ipod Touch 5g 16gb Negro Igual a Nuevo Completo Unico!',
-  price: {
-  currency: '$',
-    amount: 154999,
-    decimals: 965,
-},
-  location: 'Mendoza',
-    picture: 'https://i.pinimg.com/736x/c0/48/d0/c048d0f04c95dc7c2d4523a1b76eae29.jpg',
-  condition: 'new',
-  free_shipping: true
-},
-
-*/
 const ProductItem = ({ picture, price, title, location, free_shipping: shipping, id }) => {
   const url = `items/${id}`
   const formattedPrice = priceFormatter(price)

@@ -5,7 +5,7 @@ import './styles.scss'
 const SearchResultsView = ({data}) => {
   return (
     <div className="result-container">
-      {data.map(item => <ProductItem {...item} />)}
+      {data.map(item => <ProductItem key={item.id} {...item} />)}
     </div>
   )
 }

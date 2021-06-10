@@ -5,6 +5,10 @@
     display: grid;
     grid-template-columns: 180px 60% 20%;
     grid-column-gap: $spaceSmall;
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
   }
 
   &-image {

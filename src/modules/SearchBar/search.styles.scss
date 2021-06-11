@@ -29,23 +29,4 @@
       outline: none;
     }
   }
-  &-button{
-    position: absolute;
-    height: 100%;
-    top:0;
-    right: 0;
-    width: 40px;
-    border: none;
-    cursor: pointer;
-    background: $lightGray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px ;
-    &:focus{
-      outline: none;
-    }
-
-  }
 }

@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import MeliLogo from '../../assets/images/Logo_ML.png'
 import searchIcon from '../../assets/images/ic_Search.png'
-import './styles.scss'
+import './search.styles.scss'
+import Button from '../../Components/Button/button'
 
 const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
   <form onSubmit={searchCallback}>
@@ -13,10 +14,9 @@ const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
            value={searchInput}
     />
 
-    <button type="submit" className="nav-header-button">
+    <Button type="submit" styleType="search" title={
       <img src={searchIcon} alt="search-icon" />
-    </button>
-
+    }/>
   </form>
 )
 

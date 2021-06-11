@@ -1,19 +1,26 @@
 @import '../../../commonStyles/variables.scss';
 
+%link-default {
+  text-decoration: none;
+  color: inherit;
+}
+
 .product-item {
   &-container {
     display: grid;
     grid-template-columns: 180px 60% 20%;
     grid-column-gap: $spaceSmall;
-    a{
-      text-decoration: none;
-      color: inherit;
+    & > a{
+      @extend %link-default;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
   &-image {
-    width: 100%;
-    max-height: 100%;
+    max-width: 100%;
+    max-height: 180px;
     border-radius: $radius-04;
   }
 
@@ -25,16 +32,10 @@
 
   &-info {
     color: $darkGray;
-
     .shipping-icon {
       width: 20px;
       margin-left: 12px;
     }
-
-    h2, h3 {
-      font-weight: normal;
-    }
-
     &_title {
       width: 66%;
       font-size: 18px;
@@ -45,6 +46,12 @@
     &_price {
       font-size: 24px;
       margin: $spaceSmall 0 $spaceBig 0;
+    }
+    h2, h3 {
+      font-weight: normal;
+    }
+    a{
+      @extend %link-default;
     }
   }
 }

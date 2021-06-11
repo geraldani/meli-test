@@ -16,7 +16,6 @@ const ProductItem = ({ picture, price, title, location, free_shipping: shipping,
           <img src={picture} alt="" className="product-item-image" />
         </Link>
         <div className="product-item-info">
-
           <Link to={url}>
             <h2 className="product-item-info_price">
               {formattedPrice}{shipping && <img src={shippingIcon} alt="" className="shipping-icon" />}

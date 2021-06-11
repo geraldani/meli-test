@@ -17,7 +17,7 @@ const mockPorducts = {
         decimals: 0,
       },
       location: 'Mendoza',
-      picture: 'https://i.pinimg.com/736x/c0/48/d0/c048d0f04c95dc7c2d4523a1b76eae29.jpg',
+      picture: 'https://www.ventasrosario.com.ar/wp-content/uploads/2019/10/iphone11-select-2019-family.jpg',
       condition: 'new',
       free_shipping: true
     },

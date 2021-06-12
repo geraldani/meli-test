@@ -1,0 +1,107 @@
+@import '../../commonStyles/variables.scss';
+
+.product-detail {
+  &-container {
+    background: white;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .25);
+    margin-top: 76px; // todo quitar luego
+    display: grid;
+    grid-template-columns: 680px auto;
+    justify-items: center;
+    color: $darkGray;
+
+    img {
+      max-width: 80%;
+      max-height: 100%;
+    }
+
+    & > .product-detail-info_mobile {
+      display: none;
+    }
+  }
+
+  &-info {
+    padding: $spaceBig $spaceBig $spaceBig 0;
+
+    &_conditionSail {
+      font-size: $font-14;
+      margin: 0;
+    }
+
+    &_title {
+      margin: $spaceSmall 0 $spaceBig 0;
+      font-size: $font-24;
+    }
+
+    &_price {
+      font-weight: normal;
+      font-size: $font-46;
+      margin-top: 0;
+      margin-bottom: $spaceBig;
+    }
+  }
+
+  &-description {
+    padding-left: $spaceBig;
+    padding-top: $spaceBig * 2;
+
+    &_title {
+      font-size: $font-28;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    p {
+      margin: $spaceBig 0;
+      font-size: $font-16;
+      color: $darkGrayText;
+    }
+  }
+
+  @media screen and (max-width: $screen-xl) {
+    &-container {
+      grid-template-columns: 60% auto;
+    }
+  }
+  @media screen and (max-width: $screen-lg) {
+    &-container {
+      grid-template-columns: 100%;
+
+      > .product-detail-info {
+        &_mobile {
+          display: block;
+          padding: $spaceSmall;
+          width: 100%;
+        }
+      }
+    }
+
+    &-info {
+      width: 100%;
+      padding: $spaceSmall;
+      &_conditionSail{
+        font-size: $font-12;
+      }
+      &_title{
+        font-size: $font-16;
+        font-weight: normal;
+        margin-bottom: 0;
+        margin-top: $spaceSmall / 2;
+      }
+      &_mobile {
+        display: none;
+      }
+      &_price{
+        font-size: $font-36;
+      }
+      .button.buy{
+        width: 100%;
+      }
+    }
+    &-description{
+     padding: $spaceSmall;
+    }
+  }
+}

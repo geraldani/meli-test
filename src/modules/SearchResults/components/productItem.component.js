@@ -22,8 +22,9 @@ const ProductItem = ({ picture, price, title, location, free_shipping: shipping,
             </h2>
           </Link>
 
-
           <h3 className="product-item-info_title">{title}</h3>
+          <p className="product-item-location">{location}</p>
+
         </div>
         <p className="product-item-location">{location}</p>
       </div>

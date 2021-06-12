@@ -25,12 +25,19 @@ const productCondition = {
 
 const ProductDetailView = () => {
   const { sold_quantity, condition, picture, title, price, description } = item
+  const InfoSailsTitle = () => (
+    <div className="product-detail-info_mobile">
+      <p className="product-detail-info_conditionSail">{productCondition[condition]} - {sold_quantity} vendidos</p>
+      <h2 className="product-detail-info_title">{title}</h2>
+    </div>
+  )
+
   return (
     <div className="product-detail-container">
-      <img src={picture} alt=""/>
+      <InfoSailsTitle />
+      <img src={picture} alt="" />
       <div className="product-detail-info">
-        <p className="product-detail-info_conditionSail">{productCondition[condition]} - {sold_quantity} vendidos</p>
-        <h2 className="product-detail-info_title">{title}</h2>
+        <InfoSailsTitle />
         <h3 className="product-detail-info_price">{priceFormatter(price)}</h3>
         <Button title='Comprar' styleType="buy"></Button>
       </div>

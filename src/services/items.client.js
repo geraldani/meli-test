@@ -19,6 +19,7 @@ const parseResponseList = res => ({
   },
   picture: res.thumbnail,
   condition: res.condition,
+  location: res.address.state_name,
   free_shipping: res.shipping.free_shipping
 })
 

@@ -51,8 +51,10 @@ const parseResponseDetails = res => ({
 })
 
 const getItemDetails = async param => {
-  const responseListedItem = await axios.get(`${urlItem}/${param}`);
-  const responseDescriptionItem = await axios.get(`${urlItem}/${param}/description`);
+  const responseListedItemPromise = axios.get(`${urlItem}/${param}`);
+  const responseDescriptionItemPromise = axios.get(`${urlItem}/${param}/description`);
+  const [responseListedItem, responseDescriptionItem] = await Promise.all([responseListedItemPromise, responseDescriptionItemPromise])
+
   return ({
     author: authorInfo,
     item: parseResponseDetails({ ...responseListedItem.data, description: responseDescriptionItem.data.plain_text })

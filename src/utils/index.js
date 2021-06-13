@@ -1,3 +1,11 @@
-import { priceFormatter } from './formatters'
+import {
+  priceFormatter,
+  decimalSplitter,
+  formatText
+} from './formatters'
 
-export { priceFormatter }
+export {
+  priceFormatter,
+  decimalSplitter,
+  formatText
+}

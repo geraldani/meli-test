@@ -40,8 +40,8 @@ const parseResponseDetails = res => ({
   title: res.title,
   price: {
     currency: res.currency_id,
-    amount: res.price,
-    decimals: 0,
+    amount: getInteger(res.price),
+    decimals: getDecimal(res.price)
   },
   picture: res.pictures[0].secure_url || res.secure_thumbnail,
   condition: res.condition,

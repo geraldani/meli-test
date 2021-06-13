@@ -40,12 +40,17 @@
       font-size: $font-46;
       margin-top: 0;
       margin-bottom: $spaceBig;
+      .price-decimals{
+        font-size: $font-24;
+        vertical-align: text-top;
+      }
     }
   }
 
   &-description {
     padding-left: $spaceBig;
     padding-top: $spaceBig * 2;
+    width: 100%;
 
     &_title {
       font-size: $font-28;

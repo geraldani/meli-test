@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import SearchBarView from './search.component'
+import { useHistory } from 'react-router-dom'
+import { useGetQuery } from '../../Hooks/useGetQuery'
 
 const SearchBar = () => {
-  const [searchInput, setSearchInput] = useState('')
+  const querySearch = useGetQuery()
+  const [searchInput, setSearchInput] = useState(querySearch || '')
+  let history = useHistory()
 
-  const searchCallback = (ev) => {
-    console.log('tengo que buscar ', searchInput)
-    ev.preventDefault()
-  }
   const onChangeCallback = text => setSearchInput(text.target.value)
+
+  const searchCallback = async (ev) => {
+    ev.preventDefault()
+    history.push(`/items?search=${searchInput}`)
+  }
 
   return (
     <SearchBarView

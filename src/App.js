@@ -1,21 +1,20 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import SearchBar from './modules/SearchBar/search.container'
+import { SearchBar, SearchResults, SearchMessage, ProductDetail } from './modules'
 import './commonStyles/global.scss'
-import SearchResults from './modules/SearchResults/results.container'
-import ProductDetail from './modules/ProductDetails/productDetail.container'
 
 const App = () => (
   <>
-    <SearchBar />
-    <main className="main-container">
-      <Router>
+    <Router>
+      <SearchBar />
+      <main className="main-container">
         <Switch>
-          <Route exact path="/" component={SearchResults}></Route>
+          <Route exact path="/" component={SearchMessage}></Route>
+          <Route exact path="/items" component={SearchResults}></Route>
           <Route exact path="/items/:id" component={ProductDetail}></Route>
         </Switch>
-      </Router>
-    </main>
+      </main>
+    </Router>
   </>
 )
 

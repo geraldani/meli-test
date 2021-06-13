@@ -1,39 +1,7 @@
 const axios = require('axios');
+const { getInteger, getDecimal, authorInfo } = require('./utils')
 
-const urlSearch = 'https://api.mercadolibre.com/sites/MLA/search';
 const urlItem = 'https://api.mercadolibre.com/items';
-
-const authorInfo = {
-  name: 'Geraldyn',
-  lastname: 'Chirinos'
-}
-
-const getInteger = amount => Math.trunc(amount)
-const getDecimal = amount => Number((amount - Math.trunc(amount)).toPrecision(2))
-
-//todo falta ver lo de agregar categories
-const parseResponseList = res => ({
-  id: res.id,
-  title: res.title,
-  price: {
-    currency: res.currency_id,
-    amount: getInteger(res.price),
-    decimals: getDecimal(res.price)
-  },
-  picture: res.thumbnail,
-  condition: res.condition,
-  location: res.address.state_name,
-  free_shipping: res.shipping.free_shipping
-})
-
-const getItemsList = async (query) => {
-  const response = await axios.get(`${urlSearch}?q=${query}`)
-  let results = response.data.results
-  return ({
-    author: authorInfo,
-    items: results.slice(0, 4).map(parseResponseList)
-  })
-}
 
 const parseResponseDetails = res => ({
   id: res.id,
@@ -43,6 +11,7 @@ const parseResponseDetails = res => ({
     amount: getInteger(res.price),
     decimals: getDecimal(res.price)
   },
+  categories: ['Memoria','Flores','Disfraces','Halloween'],
   picture: res.pictures[0].secure_url || res.secure_thumbnail,
   condition: res.condition,
   free_shipping: res.shipping.free_shipping,
@@ -61,7 +30,4 @@ const getItemDetails = async param => {
   })
 }
 
-module.exports = {
-  getItemsList,
-  getItemDetails
-}
+module.exports = { getItemDetails }

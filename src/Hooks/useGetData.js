@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-const useGetData = (url, attribute, paramChange) => {
+const useGetData = (url, paramChange) => {
   const [data, setData] = useState()
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
@@ -11,7 +11,7 @@ const useGetData = (url, attribute, paramChange) => {
       try {
         setIsLoading(true)
         const res = await axios.get(url)
-        setData(res.data[attribute])
+        setData(res.data)
       } catch (e) {
         console.error('Ocurrio un error al procesar la solicitud ', e)
         setIsError(true)

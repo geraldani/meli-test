@@ -5,11 +5,11 @@ import { useParams } from 'react-router-dom'
 
 const ProductDetail = () => {
   let { id } = useParams()
-  const {data, isLoading, isError} = useGetData(`http://localhost:3001/api/items/${id}`, 'item')
+  const {data, isLoading, isError} = useGetData(`http://localhost:3001/api/items/${id}`)
 
   return (
     <ProductDetailView
-      {...data}
+      {...data?.item}
       isLoading={isLoading}
       isError={isError}
     />

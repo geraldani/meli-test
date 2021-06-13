@@ -15,7 +15,7 @@ app.get('/api/items/:id', async (req, res) => {
     res.send(await clientItem.getItemDetails(req.params.id))
   } catch (e) {
     console.error('Error al traer la data ',e);
-    res.status(e.response.status).send(`Error, ${e.message}`);
+    res.status(e.response.status).send({message: `Error, ${e.message}`, code: e.response.status});
   }
 })
 

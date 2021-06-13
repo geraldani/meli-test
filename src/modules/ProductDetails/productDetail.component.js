@@ -2,6 +2,7 @@ import React from 'react'
 import './productDetail.styles.scss'
 import Button from '../../Components/Button/button'
 import Loading from '../../Components/Loaders/loading.component'
+import Error from '../../Components/Error/error.component'
 import { priceFormatter, decimalSplitter, formatText } from '../../utils'
 
 const productCondition = {
@@ -19,6 +20,7 @@ const ProductDetailView = ({
  isLoading,
  isError
 }) => {
+
   const InfoSailsTitle = () => (
     <div className="product-detail-info_mobile">
       <p className="product-detail-info_conditionSail">{productCondition[condition]} - {sold_quantity} vendidos</p>
@@ -29,11 +31,13 @@ const ProductDetailView = ({
   const niceDescription = description ? formatText(description) : 'El vendedor no incluyó una descripción del producto'
 
   if (isLoading) return <Loading />
-  else if (isError) return <div>Ocurrio un error</div>
+
+  if (isError) return <Error />
+
   return (
     <div className="product-detail-container">
       <InfoSailsTitle />
-      <img src={picture} alt="" />
+      <img src={picture} alt={title} />
       <div className="product-detail-info">
         <InfoSailsTitle />
 

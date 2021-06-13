@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect } from 'react'
 import SearchResultsView from './results.component'
 
 const mockPorducts = {
@@ -64,6 +64,7 @@ const mockPorducts = {
 }
 
 const SearchResults = () => {
+  const [loading, setLoading] = useState(false);
 
   return (
     <SearchResultsView data={mockPorducts.items} />

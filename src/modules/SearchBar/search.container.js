@@ -1,30 +1,26 @@
 import React, { useState } from 'react'
 import SearchBarView from './search.component'
-import { useHistory } from "react-router-dom";
-
+import { useHistory } from 'react-router-dom'
+import { useGetQuery } from '../../Hooks/useGetQuery'
 
 const SearchBar = () => {
-  const [searchInput, setSearchInput] = useState('')
-  let history = useHistory();
+  const querySearch = useGetQuery()
+  const [searchInput, setSearchInput] = useState(querySearch || '')
+  let history = useHistory()
 
-
-  const onChangeCallback = text => setSearchInput(text.target.value);
+  const onChangeCallback = text => setSearchInput(text.target.value)
 
   const searchCallback = async (ev) => {
-    ev.preventDefault();
-    history.push(`/items`)
-    // history.push(`/items?search=${searchInput}`)
-    /*const responde = await axios.get(`http://localhost:3001/api/items?q=${searchInput}`)
-    console.log('la respuesta ', responde.data)
-    console.log('tengo que buscar ', searchInput)*/
+    ev.preventDefault()
+    history.push(`/items?search=${searchInput}`)
   }
 
   return (
-      <SearchBarView
-        onChangeCallback={onChangeCallback}
-        searchCallback={searchCallback}
-        searchInput={searchInput}
-      />
+    <SearchBarView
+      onChangeCallback={onChangeCallback}
+      searchCallback={searchCallback}
+      searchInput={searchInput}
+    />
   )
 }
 

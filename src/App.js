@@ -5,8 +5,8 @@ import './commonStyles/global.scss'
 
 const App = () => (
   <>
-    <SearchBar />
     <Router>
+      <SearchBar />
       <main className="main-container">
         <Switch>
           <Route exact path="/" component={SearchMessage}></Route>

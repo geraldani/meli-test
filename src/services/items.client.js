@@ -8,14 +8,17 @@ const authorInfo = {
   lastname: 'Chirinos'
 }
 
-//todo falta ver lo de decimals y agregar categories
+const getInteger = amount => Math.trunc(amount)
+const getDecimal = amount => Number((amount - Math.trunc(amount)).toPrecision(2))
+
+//todo falta ver lo de agregar categories
 const parseResponseList = res => ({
   id: res.id,
   title: res.title,
   price: {
-    currency: res.prices.prices[0].currency_id,
-    amount: res.price,
-    decimals: 0
+    currency: res.currency_id,
+    amount: getInteger(res.price),
+    decimals: getDecimal(res.price)
   },
   picture: res.thumbnail,
   condition: res.condition,

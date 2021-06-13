@@ -27,7 +27,7 @@ const getItemsList = async (query) => {
   let results = response.data.results
   return ({
     author: authorInfo,
-    items: results.slice(0, 3).map(parseResponseList)
+    items: results.slice(0, 4).map(parseResponseList)
   })
 }
 
@@ -39,7 +39,7 @@ const parseResponseDetails = res => ({
     amount: res.price,
     decimals: 0,
   },
-  picture: res?.pictures[0].secure_url || res.secure_thumbnail,
+  picture: res.pictures[0].secure_url || res.secure_thumbnail,
   condition: res.condition,
   free_shipping: res.shipping.free_shipping,
   sold_quantity: res.sold_quantity,

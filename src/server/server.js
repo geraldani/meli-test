@@ -12,7 +12,7 @@ app.get('/api/items', async (req, res) => {
   try {
     res.send(await getItemsList(req.query.q))
   }catch (e) {
-    res.status(e.response.status).send(`Error, ${e.message}`);
+    res.status(e.response.status).send({message: `Error, ${e.message}`, code: e.response.status});
   }
 })
 
@@ -24,6 +24,7 @@ app.get('/api/items/:id', async (req, res) => {
     res.status(e.response.status).send({message: `Error, ${e.message}`, code: e.response.status});
   }
 })
+
 
 app.listen(PORT, () =>
   console.log(`Listening on port ${PORT}!`),

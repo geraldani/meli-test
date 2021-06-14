@@ -1,8 +1,8 @@
 const axios = require('axios');
-const { getInteger, getDecimal, authorInfo, baseUrl } = require('./utils')
+const { getInteger, getDecimal, authorInfo, ML_URL } = require('./utils')
 
-const urlSearch = `${baseUrl}/sites/MLA/search`;
-const urlCategories = `${baseUrl}/categories`;
+const SEARCH_URL = `${ML_URL}/sites/MLA/search`;
+const CATEGORIES_URL = `${ML_URL}/categories`;
 
 const parseResponseList = res => ({
   id: res.id,
@@ -27,13 +27,13 @@ const getCategories = async categoriesArr => {
   const [ highestCategoryId ] = Object.entries(categoriesIdCount).reduce(findHighestValReducer, ['', 0]) // obtengo el id de la categoria que mas se repite
 
   //Ahora se obtiene la info de la api
-  const categories = await axios.get(`${urlCategories}/${highestCategoryId}`);
+  const categories = await axios.get(`${CATEGORIES_URL}/${highestCategoryId}`);
 
   return categories.data.path_from_root.map(c => c.name)
 }
 
 const getItemsList = async (query) => {
-  const response = await axios.get(`${urlSearch}?q=${query}`);
+  const response = await axios.get(`${SEARCH_URL}?q=${query}`);
 
   const results = response.data.results.slice(0,4);
 

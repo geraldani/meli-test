@@ -6,11 +6,13 @@ import Button from '../Button/button'
 const Error = () => {
   let history = useHistory()
 
+  const goToInit = () => history.push('/')
+
   return (
     <div className="error-container">
       <p>Ocurrio un error al procesar la solicitud.</p>
       <p>Intente mas tarde</p>
-      <Button callback={history.goBack} title="Volver" styleType="buy" />
+      <Button callback={goToInit} title="Volver" styleType="buy" />
     </div>
   )
 }

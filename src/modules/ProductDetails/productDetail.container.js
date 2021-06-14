@@ -1,11 +1,12 @@
 import React from 'react'
 import ProductDetailView from './productDetail.component'
-import { useGetData } from '../../Hooks'
-import { useParams } from 'react-router-dom'
+import { useGetData } from '../../Hooks';
+import { useParams } from 'react-router-dom';
+import {baseUrl} from '../../utils/URL'
 
 const ProductDetail = () => {
   let { id } = useParams()
-  const {data, isLoading, isError} = useGetData(`http://localhost:3001/api/items/${id}`)
+  const {data, isLoading, isError} = useGetData(`${baseUrl}/api/items/${id}`)
 
   return (
     <ProductDetailView

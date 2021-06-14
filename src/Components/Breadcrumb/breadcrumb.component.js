@@ -6,7 +6,7 @@ const Breadcrumb = ({ crumbs }) => (
   <div className="breadcrumb-container">
     <ul className="breadcrumb-list">
       {
-        crumbs.map(crumb => <li>{crumb}</li>)
+        crumbs.map(crumb => <li key={crumb}>{crumb}</li>)
       }
     </ul>
   </div>

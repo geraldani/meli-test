@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SearchBarView from './search.component'
 import { useHistory } from 'react-router-dom'
-import { useGetQuery } from '../../Hooks/useGetQuery'
+import { useGetQuery } from '../../Hooks'
 
 const SearchBar = () => {
   const querySearch = useGetQuery()

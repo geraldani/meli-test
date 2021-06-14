@@ -3,8 +3,12 @@ import ProductItem from './components/productItem.component'
 import Loading from '../../Components/Loaders/loading.component'
 import './styles.scss'
 import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.component'
+import Error from '../../Components/Error/error.component'
 
-const SearchResultsView = ({ data = [], isLoading, categories }) => {
+const SearchResultsView = ({ data = [], isLoading, categories, isError }) => {
+
+  if(isError) return <Error />
+
   return (
     <div className="result-container">
       {

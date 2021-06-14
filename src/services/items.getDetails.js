@@ -1,8 +1,8 @@
 const axios = require('axios');
-const { getInteger, getDecimal, authorInfo } = require('./utils')
+const { getInteger, getDecimal, authorInfo, baseUrl } = require('./utils')
 
-const urlItem = 'https://api.mercadolibre.com/items';
-const urlCategories = 'https://api.mercadolibre.com/categories'
+const urlItem = `${baseUrl}/items`;
+const urlCategories = `${baseUrl}/categories`
 
 const parseResponseDetails = res => ({
   id: res.id,
@@ -21,10 +21,10 @@ const parseResponseDetails = res => ({
 })
 
 const getItemDetails = async param => {
-  const responseListedItemPromise = axios.get(`${urlItem}/${param}`);
-  const responseDescriptionItemPromise = axios.get(`${urlItem}/${param}/description`);
+  const listedItemPromise = axios.get(`${urlItem}/${param}`);
+  const descriptionItemPromise = axios.get(`${urlItem}/${param}/description`);
 
-  const [responseListedItem, responseDescriptionItem] = await Promise.all([responseListedItemPromise, responseDescriptionItemPromise])
+  const [responseListedItem, responseDescriptionItem] = await Promise.all([listedItemPromise, descriptionItemPromise])
 
   const categories = await axios.get(`${urlCategories}/${responseListedItem.data.category_id}`);
 

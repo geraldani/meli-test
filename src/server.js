@@ -2,13 +2,18 @@ const express = require('express')
 const cors = require('cors')
 const { getItemsList } = require('./services/items.getList')
 const { getItemDetails } = require('./services/items.getDetails')
-const app = express()
-const PORT = process.env.PORT || 3001
+const app = express();
+
+const PORT = process.env.BACK_PORT || 3001
 
 app.use(cors())
 
 app.get('/api/items', async (req, res) => {
-  res.send(await getItemsList(req.query.q))
+  try {
+    res.send(await getItemsList(req.query.q))
+  }catch (e) {
+    res.status(e.response.status).send(`Error, ${e.message}`);
+  }
 })
 
 app.get('/api/items/:id', async (req, res) => {

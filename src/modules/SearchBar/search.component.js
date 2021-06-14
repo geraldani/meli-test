@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MeliLogo from '../../assets/images/Logo_ML.png'
-import searchIcon from '../../assets/images/ic_Search.png'
 import './search.styles.scss'
 import Button from '../../Components/Button/button'
 import { Link } from 'react-router-dom'
+
+const MeliLogo = 'https://res.cloudinary.com/geraldeveloper27/image/upload/v1623710922/assets/Logo_MLx2.png'
+const searchIcon = 'https://res.cloudinary.com/geraldeveloper27/image/upload/v1623710922/assets/ic_Search.png'
 
 const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
   <form onSubmit={searchCallback}>

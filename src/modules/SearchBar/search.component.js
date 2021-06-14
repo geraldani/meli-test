@@ -4,6 +4,7 @@ import MeliLogo from '../../assets/images/Logo_ML.png'
 import searchIcon from '../../assets/images/ic_Search.png'
 import './search.styles.scss'
 import Button from '../../Components/Button/button'
+import { Link } from 'react-router-dom'
 
 const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
   <form onSubmit={searchCallback}>
@@ -23,11 +24,13 @@ const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
 const SearchBarView = ({searchCallback, onChangeCallback, searchInput}) => (
   <header className="nav-header">
     <div className="nav-header-container">
-      <img
-        src={MeliLogo}
-        alt="meli-logo"
-        className='nav-header-mainLogo'
-      />
+      <Link to="/">
+        <img
+          src={MeliLogo}
+          alt="meli-logo"
+          className='nav-header-mainLogo'
+        />
+      </Link>
       <SearchForm
         searchCallback={searchCallback}
         onChangeCallback={onChangeCallback}

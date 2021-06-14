@@ -10,14 +10,15 @@ const priceFormatter = (
 ) => {
 
   amount = amount?.toString()
-  const j = (amount?.length > 3) ? amount?.length % 3 : 0;
-  const pirceFormatted = (j ? amount?.substr(0, j) + thouSep : '') + amount?.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thouSep)
-  const decFormated = showDecimals && decimals > 0 ? `${decSep}${decimalSplitter(decimals)}` : ''
+  const moreThanThreee = amount?.length > 3 ? amount?.length % 3 : 0
+  const priceFormatted = (moreThanThreee ? amount?.substr(0, moreThanThreee) + thouSep : '') + amount?.substr(moreThanThreee).replace(/(\d{3})(?=\d)/g, "$1" + thouSep)
+  const decFormatted = showDecimals && decimals > 0 ? `${decSep}${decimalSplitter(decimals)}` : ''
 
-  return (`$ ${pirceFormatted}${decFormated}`)
+  return (`$ ${priceFormatted}${decFormatted}`)
 }
 
 const formatText = text => text?.split("\n").map((line, i) => <Fragment key={line+i}>{line}<br/></Fragment>)
+
 export {
   priceFormatter,
   decimalSplitter,

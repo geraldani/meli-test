@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import './styles.scss'
 import Button from '../Button/button'
+import './styles.scss'
 
 const Error = () => {
   let history = useHistory()

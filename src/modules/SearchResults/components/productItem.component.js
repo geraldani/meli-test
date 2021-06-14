@@ -1,10 +1,8 @@
 import React from 'react'
 import Card from '../../../Components/Cards/card'
 import { Link } from 'react-router-dom'
-import { priceFormatter } from '../../../utils'
+import { priceFormatter, shippingIcon } from '../../../utils'
 import './productItem.styles.scss'
-
-const shippingIcon = 'https://res.cloudinary.com/geraldeveloper27/image/upload/v1623710922/assets/ic_shipping2x.png';
 
 const ProductItem = ({ picture, price, title, location, free_shipping: shipping, id }) => {
   const url = `items/${id}`

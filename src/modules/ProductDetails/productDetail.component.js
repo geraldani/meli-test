@@ -1,10 +1,7 @@
 import React from 'react'
-import './productDetail.styles.scss'
-import Button from '../../Components/Button/button'
-import Loading from '../../Components/Loaders/loading.component'
-import Error from '../../Components/Error/error.component'
 import { priceFormatter, decimalSplitter, formatText } from '../../utils'
-import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.component'
+import { Button, Breadcrumb, Loading, Error } from '../../Components'
+import './productDetail.styles.scss'
 
 const productCondition = {
   new: 'Nuevo',

@@ -18,7 +18,7 @@ El front fue hecho con create-react-app
 ## Scripts disponibles:
 
 
-### `npm run app-run`
+### `npm run app`
 
 Levanta la toda aplicacion, tanto el Front como el Back en modo de desarrollo.\
 Por defecto, el front se correra en [http://localhost:3000](http://localhost:3000).
@@ -34,4 +34,4 @@ Levanta solo el frontend
 ## Pasos para correr el proyecto
 - Descargar el proyecto
 - Instalar dependencias con `npm install`
-- Ejecutar `npm run app-run`
+- Ejecutar `npm run app`

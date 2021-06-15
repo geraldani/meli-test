@@ -3,6 +3,11 @@ import SearchBarView from './search.component'
 import { useHistory } from 'react-router-dom'
 import { useGetQuery } from '../../Hooks'
 
+/**
+ * Componente stateful de la barra de busqueda. Al enviar la busqueda, navegara a la ruta de search, haciendo alli la solicitud de datos
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const SearchBar = () => {
   const querySearch = useGetQuery()
   const [searchInput, setSearchInput] = useState(querySearch || '')

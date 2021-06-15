@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { SearchBar, SearchResults, SearchMessage, ProductDetail } from './modules'
 import './commonStyles/global.scss'
 
+// La base de la aplicacion
 const App = () => (
   <>
     <Router>

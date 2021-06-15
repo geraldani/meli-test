@@ -1,6 +1,12 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
+/**
+ * Hook para traer data de alguna api
+ * @param url: el endpoint para traer la data
+ * @param paramChange: la variable que usara el hook para volverse a llamar
+ * @returns {{isLoading: boolean, isError: boolean, data: array}}
+ */
 const useGetData = (url, paramChange) => {
   const [data, setData] = useState()
   const [isLoading, setIsLoading] = useState(false)

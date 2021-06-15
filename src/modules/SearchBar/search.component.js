@@ -5,6 +5,7 @@ import { Button } from '../../Components'
 import { searchIcon, MeliLogo } from '../../utils'
 import './search.styles.scss'
 
+// Esta parte es solo el formulario del header
 const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
   <form onSubmit={searchCallback}>
     <input type="search"
@@ -20,6 +21,14 @@ const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
   </form>
 )
 
+/**
+ * Renderiza la barra de busqueda
+ * @param searchCallback: el callback que se llama al precionar enter o el boton de buscar
+ * @param onChangeCallback: el callback cuando se modifica el input de busqueda
+ * @param searchInput: el valor del input
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const SearchBarView = ({ searchCallback, onChangeCallback, searchInput }) => (
   <header className="nav-header">
     <div className="nav-header-container">

@@ -8,6 +8,7 @@ const PORT = process.env.BACK_PORT || 3001
 
 app.use(cors())
 
+//Endpint para la lista de items
 app.get('/api/items', async (req, res) => {
   try {
     res.send(await getItemsList(req.query.q))
@@ -16,6 +17,7 @@ app.get('/api/items', async (req, res) => {
   }
 })
 
+//Endpoint para el detalle del item
 app.get('/api/items/:id', async (req, res) => {
   try {
     res.send(await getItemDetails(req.params.id))

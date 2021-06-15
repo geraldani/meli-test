@@ -8,6 +8,20 @@ const productCondition = {
   used: 'Usado'
 }
 
+/**
+ * El componente dumb que renderiza la vista, recibe el objeto item y dos manejadores para saber si hubo error o si esta cargando
+ * @param sold_quantity
+ * @param condition
+ * @param picture
+ * @param title
+ * @param price
+ * @param description
+ * @param categories
+ * @param isLoading
+ * @param isError
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const ProductDetailView = ({
   sold_quantity,
   condition,

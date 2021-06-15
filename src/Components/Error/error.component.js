@@ -3,6 +3,11 @@ import { useHistory } from 'react-router-dom'
 import Button from '../Button/button'
 import './styles.scss'
 
+/**
+ * Muestra un error generico, no se ahondo en diferenciar tipos de errores, simplemente muestra un texto generico si algo fallo en el back
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const Error = () => {
   let history = useHistory()
 

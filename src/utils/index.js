@@ -1,11 +1,16 @@
 import {
   priceFormatter,
   decimalSplitter,
-  formatText
+  formatText,
 } from './formatters'
+
+import { shippingIcon, MeliLogo, searchIcon } from './images'
 
 export {
   priceFormatter,
   decimalSplitter,
-  formatText
+  formatText,
+  shippingIcon,
+  MeliLogo,
+  searchIcon
 }

@@ -8,14 +8,16 @@ const PORT = process.env.BACK_PORT || 3001
 
 app.use(cors())
 
+//Endpint para la lista de items
 app.get('/api/items', async (req, res) => {
   try {
     res.send(await getItemsList(req.query.q))
   }catch (e) {
-    res.status(e.response.status).send(`Error, ${e.message}`);
+    res.status(e.response.status).send({message: `Error, ${e.message}`, code: e.response.status});
   }
 })
 
+//Endpoint para el detalle del item
 app.get('/api/items/:id', async (req, res) => {
   try {
     res.send(await getItemDetails(req.params.id))
@@ -24,6 +26,7 @@ app.get('/api/items/:id', async (req, res) => {
     res.status(e.response.status).send({message: `Error, ${e.message}`, code: e.response.status});
   }
 })
+
 
 app.listen(PORT, () =>
   console.log(`Listening on port ${PORT}!`),

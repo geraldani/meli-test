@@ -2,6 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './breadcrumb.styles.scss'
 
+/**
+ * Componente que renderiza el breadcrumb de la pagina
+ * @param crumbs: array con las palabras para armarlo
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const Breadcrumb = ({ crumbs }) => (
   <div className="breadcrumb-container">
     <ul className="breadcrumb-list">

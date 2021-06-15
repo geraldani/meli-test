@@ -1,16 +1,27 @@
 import React from 'react'
-import './productDetail.styles.scss'
-import Button from '../../Components/Button/button'
-import Loading from '../../Components/Loaders/loading.component'
-import Error from '../../Components/Error/error.component'
 import { priceFormatter, decimalSplitter, formatText } from '../../utils'
-import Breadcrumb from '../../Components/Breadcrumb/breadcrumb.component'
+import { Button, Breadcrumb, Loading, Error } from '../../Components'
+import './productDetail.styles.scss'
 
 const productCondition = {
   new: 'Nuevo',
   used: 'Usado'
 }
 
+/**
+ * El componente dumb que renderiza la vista, recibe el objeto item y dos manejadores para saber si hubo error o si esta cargando
+ * @param sold_quantity
+ * @param condition
+ * @param picture
+ * @param title
+ * @param price
+ * @param description
+ * @param categories
+ * @param isLoading
+ * @param isError
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const ProductDetailView = ({
   sold_quantity,
   condition,

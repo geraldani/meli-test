@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MeliLogo from '../../assets/images/Logo_ML.png'
-import searchIcon from '../../assets/images/ic_Search.png'
-import './search.styles.scss'
-import Button from '../../Components/Button/button'
 import { Link } from 'react-router-dom'
+import { Button } from '../../Components'
+import { searchIcon, MeliLogo } from '../../utils'
+import './search.styles.scss'
 
+// Esta parte es solo el formulario del header
 const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
   <form onSubmit={searchCallback}>
     <input type="search"
@@ -17,11 +17,19 @@ const SearchForm = ({ searchCallback, onChangeCallback, searchInput }) => (
 
     <Button type="submit" styleType="search" title={
       <img src={searchIcon} alt="search-icon" />
-    }/>
+    } />
   </form>
 )
 
-const SearchBarView = ({searchCallback, onChangeCallback, searchInput}) => (
+/**
+ * Renderiza la barra de busqueda
+ * @param searchCallback: el callback que se llama al precionar enter o el boton de buscar
+ * @param onChangeCallback: el callback cuando se modifica el input de busqueda
+ * @param searchInput: el valor del input
+ * @returns {JSX.Element}
+ * @constructor
+ */
+const SearchBarView = ({ searchCallback, onChangeCallback, searchInput }) => (
   <header className="nav-header">
     <div className="nav-header-container">
       <Link to="/">
@@ -52,6 +60,5 @@ SearchBarView.defaultProps = {
   searchInput: '',
 
 }
-
 
 export default SearchBarView

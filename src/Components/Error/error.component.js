@@ -8,15 +8,18 @@ import './styles.scss'
  * @returns {JSX.Element}
  * @constructor
  */
-const Error = () => {
+const Error = ({ type }) => {
   let history = useHistory()
 
   const goToInit = () => history.push('/')
 
   return (
     <div className="error-container">
-      <p>Ocurrio un error al procesar la solicitud.</p>
-      <p>Intente mas tarde</p>
+      {
+        type === 'wrongPath'
+          ? <p>Lo siento, pero la ruta no existe</p>
+          : <p>Ocurrio un error al procesar la solicitud.</p>
+      }
       <Button callback={goToInit} title="Volver" styleType="buy" />
     </div>
   )
